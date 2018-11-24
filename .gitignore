@@ -1,0 +1,12 @@
+src/__pycache__
+test.txt
+my_runs.sh
+stats/2a
+stats/2b
+backup/
+
+*.so
+*.o
+*.c
+*.cpp
+para.sh
