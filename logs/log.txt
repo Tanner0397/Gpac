@@ -1,0 +1,72 @@
+Results Log
+Width: 10
+Height: 15
+Pill Density: 0.5
+Wall Density: 0.25
+Fruit Chance: 0.05
+Fruit Score: 10
+Seed: 1542854359
+Runs: 1
+Evals: 2000
+Best Game File: games/best_game.txt
+Log File: logs/log.txt
+Pacman Controller: controllers/pacman/pac.txt
+Pacman Mu: 100
+Ghost Mu: 50
+Pac Lambda: 50
+Ghost Lambda: 25
+Parent Selection: over
+Survival Selection: k-tourn
+Termination: evals
+Pacman Survival k: 10
+Ghost Survival k: 10
+Pacman Parsimony Coefficent p: 3.0
+Ghost Parsimony Coefficent p: 3.0
+Evaluations until termination: 2000
+Convergence n: 700
+Over Selection top x%: 20
+Mutation Probability: 0.1
+Parsimony Upper Limit: 300.0
+
+
+
+Run 1
+100 	 9.86 	 59.0
+150 	 16.71 	 65.0
+200 	 21.62 	 65.0
+250 	 26.68 	 73.0
+300 	 31.42 	 81.0
+350 	 35.22 	 81.0
+400 	 37.69 	 81.0
+450 	 39.66 	 85.0
+500 	 43.62 	 97.0
+550 	 45.67 	 97.0
+600 	 47.71 	 97.0
+650 	 49.21 	 97.0
+700 	 50.99 	 112.0
+750 	 51.18 	 112.0
+800 	 54.28 	 112.0
+850 	 54.13 	 112.0
+900 	 56.24 	 112.0
+950 	 55.9 	 112.0
+1000 	 56.99 	 112.0
+1050 	 57.78 	 112.0
+1100 	 60.82 	 112.0
+1150 	 61.66 	 112.0
+1200 	 61.59 	 112.0
+1250 	 62.56 	 112.0
+1300 	 62.89 	 112.0
+1350 	 64.26 	 112.0
+1400 	 64.68 	 112.0
+1450 	 66.54 	 127.0
+1500 	 67.67 	 127.0
+1550 	 68.54 	 127.0
+1600 	 69.5 	 135.0
+1650 	 70.42 	 135.0
+1700 	 69.21 	 135.0
+1750 	 70.71 	 135.0
+1800 	 71.41 	 135.0
+1850 	 72.34 	 135.0
+1900 	 72.93 	 135.0
+1950 	 72.9 	 135.0
+2000 	 72.04 	 135.0
