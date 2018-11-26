@@ -382,7 +382,7 @@ class Evolution:
     """
     Parameters: None
     Returns: None
-    This function creates a single child and adds the intermidiate pool of population members
+    This function creates the next generation of population members for both the ghost and the pacmen 
     """
     def create_generation(self):
 

@@ -753,14 +753,14 @@ cdef class ghost_tree(tree):
   def __cinit__(self, int max_depth):
       self.FUNCTION_OR_TERMINAL[:] = [_TERMINAL, _FUNCITON]
       #Fill with 0's because those indivies will never be used since _TOTAL_TERMINALS is two
-      self.TYPE_OF_TERMINAL[:] = [_PACMAN, _GHOST, 0, 0, 0]
+      self.TYPE_OF_TERMINAL[:] = [_PACMAN, _GHOST, _FRUIT, 0, 0]
       self.TYPE_OF_FUNCTION[:] = [_ADDITION, _MULTIPLICATION, _SUBTRACTION, _DIVISION, _RANDOM]
       self.max_depth = max_depth
-      self._TOTAL_TERMINALS = 2
+      self._TOTAL_TERMINALS = 3
       self._TOTAL_FUNCTIONS = 5
 
 
-  cdef load_ghost_terminals(self, float ghost, float pac):
+  cdef load_ghost_terminals(self, float ghost, float pac, float fruit):
       cdef int type
       for i in range(self.terminals.size()):
           type = dereference(self.terminals[i]).type
@@ -768,6 +768,8 @@ cdef class ghost_tree(tree):
               dereference(self.terminals[i]).value = ghost
           if type == _PACMAN:
               dereference(self.terminals[i]).value = pac
+          if type == _FRUIT:
+              dereference(self.terminals[i]).value = fruit
           else:
               #This was a constant. Dont do anything
               continue
@@ -778,5 +780,5 @@ cdef class ghost_tree(tree):
   Returns: None
   Wrapper function for loading sensor inputs into the terminal
   """
-  def load_ghost_wrapper(self, ghost, pac):
-      self.load_ghost_terminals(ghost, pac)
+  def load_ghost_wrapper(self, ghost, pac, fruit):
+      self.load_ghost_terminals(ghost, pac, fruit)

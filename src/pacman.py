@@ -10,8 +10,7 @@ import sys
 from enum import Enum
 sys.path.insert(0, 'build')
 import fast_tree
-
-#Constatns for terminals
+from random import choice
 
 
 class Direction(Enum):
@@ -104,8 +103,15 @@ class pacman:
             temp = self.gp_tree.evaluate_tree()
             values.append((temp, dir))
 
-        new_dir = min(values, key=lambda x:x[0])[1]
-        self.set_direction(new_dir)
+        #Many controllers will produce the same value for multiple directions, and will choose to say in place beacause there is what I
+        #cchose to be the first direction checked. This will now choose a random direction based if teh minimum value is not unique
+        #This will help with many contollers have a 0 fitness since the choose to never move. This is to help with the fact that poor pacman contollers
+        #mean the fitness of the ghost contoller is higher while not meaning being better than others
+
+        minimum = min(values, key=lambda x:x[0])[0]
+        indices = [i for i, v in enumerate(values) if v[0] == minimum]
+        random_index = choice(indices)
+        self.set_direction(values[random_index][1])
 
 
 

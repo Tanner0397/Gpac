@@ -66,9 +66,10 @@ class ghost:
     Set the terminals for the tree, using the ghost sensor inputs
     """
     def set_tree_values(self):
-        ghost = self.game.closest_ghost(self.cell)
-        pac = self.game.distance_to_pac(self.cell)
-        self.gp_tree.load_ghost_wrapper(ghost, pac)
+        ghost = float(self.game.closest_ghost(self.cell))
+        pac = float(self.game.distance_to_pac(self.cell))
+        fruit = float(self.game.distance_to_fruit(self.cell))
+        self.gp_tree.load_ghost_wrapper(ghost, pac, fruit)
 
 
     """
@@ -103,7 +104,7 @@ class ghost:
         #Do to the fact that there are more than one ghost, and the ghost could have the same controller (if not doing the bonus)
         #The ghost could move a one unit. So instead of just picming the first minimum of all the options,
         #If the minimum is not unique we pick one of the minimums at random
-        
+
         minimum = min(values, key=lambda x:x[0])[0]
         indices = [i for i, v in enumerate(values) if v[0] == minimum]
         random_index = choice(indices)
