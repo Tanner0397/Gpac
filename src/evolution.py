@@ -382,7 +382,7 @@ class Evolution:
     """
     Parameters: None
     Returns: None
-    This function creates the next generation of population members for both the ghost and the pacmen 
+    This function creates the next generation of population members for both the ghost and the pacmen
     """
     def create_generation(self):
 
@@ -453,6 +453,8 @@ class Evolution:
             self.pac_pool[i % self.pac_generation_step].set_world_string(temp_game.get_world_string())
             self.ghost_pool[i % self.ghost_generation_step].set_world_string(temp_game.get_world_string())
 
+        #Done Creating Generation. Testing comma rule for ghost
+        #self.ghost_population.clear()
         return
 
     """

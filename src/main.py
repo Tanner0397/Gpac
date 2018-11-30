@@ -143,8 +143,6 @@ def main():
         for j in range((max(PAC_POP_SIZE, GHOST_POP_SIZE)+max(PAC_GEN_STEP, GHOST_GEN_STEP)), EVALS+1, max(PAC_GEN_STEP, GHOST_GEN_STEP)):
             #Main evolution loop
 
-            print(EA.ghost_population)
-
             #Create the next generation
             EA.create_generation()
 
@@ -171,55 +169,15 @@ def main():
                 EA.get_best_member().print_controller(PAC_CONTROLLER)
                 best_pac_fitness_all_runs = best_pac_this_run
 
-            if best_ghost_this_run < best_ghost_fitness_all_runs:
+            if best_ghost_this_run <= best_ghost_fitness_all_runs:
                 #Just print contoller and assign
+                #Print the worst game for testing
                 worst_game(EA.worst_world_string())
                 EA.get_best_ghost().print_controller(GHOST_CONTOLLER)
-                best_ghost_fitness_all_runes = best_ghost_this_run
+                best_ghost_fitness_all_runs = best_ghost_this_run
 
             if EA.determine_termination():
                 break
-
-        # #Check to see if a better game has emerged from this inital population
-        # if best_fitness_current_run > best_fitness_all_runs:
-        #     #print game
-        #     print_game(EA.best_world_string())
-        #     #Print Controller
-        #     EA.get_best_member().print_controller(PAC_CONTROLLER)
-        #     best_fitness_all_runs = best_fitness_current_run
-        #
-        # #initial Log
-        # logger.log_new_entry(LOG, POP_SIZE, best_fitness_current_run, EA.get_average_fitness())
-        # for j in range(POP_SIZE+GEN_STEP, EVALS+1, GEN_STEP):
-        #     #The main Evolution loop
-        #     #Create the next generation
-        #     for k in range(GEN_STEP):
-        #         EA.create_offspring()
-        #
-        #     #Dump the pool of children into the main population
-        #     EA.dump_pool()
-        #
-        #     #Perform Survival
-        #     EA.do_survival_selection()
-        #
-        #     current_best = EA.get_best_fitness()
-        #
-        #     #Log entry
-        #     logger.log_new_entry(LOG, j, current_best, EA.get_average_fitness())
-        #
-        #     #If the best game has changed, log it
-        #     if current_best > best_fitness_all_runs:
-        #         #Print game
-        #         print_game(EA.best_world_string())
-        #         #Print Controller
-        #         EA.get_best_member().print_controller(PAC_CONTROLLER)
-        #         best_fitness_all_runs = current_best
-        #
-        #
-        #     #Determine if we can terminate
-        #     if EA.determine_termination():
-        #         break
-
 
 
 if __name__ == "__main__":
