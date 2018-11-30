@@ -3,6 +3,7 @@ test.txt
 my_runs.sh
 stats/2a
 stats/2b
+stats/2c
 backup/
 
 *.so
