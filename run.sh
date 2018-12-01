@@ -7,4 +7,5 @@
 # compile the program
 
 # execute the program and pass arguments if they exist
+make
 python3 src/main.py $1
