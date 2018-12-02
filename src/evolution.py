@@ -312,6 +312,9 @@ class Evolution:
         self.pac_population = sorted(self.pac_population, key = lambda x: random())
 
     """
+    Parameters: None
+    Returns: Ghost population member
+    Performs fitness propertional selection
     """
     def ghost_fitness_proportional(self):
         #Since the values are negative, take the minimim of all the fitnesses and then adjust the fitness based on this minimum
@@ -328,6 +331,9 @@ class Evolution:
                 return memb
 
     """
+    Parameters: None 
+    Return: Shot population member
+    Performs overselction on ghost population
     """
     def ghost_over_selection(self):
         #Find number of the top x percent
@@ -349,6 +355,9 @@ class Evolution:
 
 
     """
+    Parameters: None
+    Returns: None
+    Does K tournament for the ghost population
     """
     def ghost_survival_k_tourament(self):
         if self.ghost_survival_k > len(self.ghost_population):
@@ -367,6 +376,9 @@ class Evolution:
             self.ghost_population.remove(loser)
 
     """
+    paratmers: none
+    retunrs: none
+    Does truncation for ghost population
     """
     def ghost_truncation(self):
         if len(self.ghost_population) < self.ghost_population_size:
