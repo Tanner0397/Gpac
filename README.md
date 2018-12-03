@@ -2,9 +2,6 @@
 #       Compiling & Running	#
 #################################
 
-
-Some modules must be build first by cython. Simply run ```make``` to compile those modules used.
-
 This program runs using ```./run.sh``` or ```./run.sh <config>``` where config is the path+file location of the configuration file relative to the root of the project folder.
 
 When reading the controller, the function nodes are represented by (R, \*, +, /, -) with R being the uniform random function. The terminals are represented by (f, p, w, g) where f
