@@ -11,3 +11,4 @@ backup/
 *.c
 *.cpp
 para.sh
+*.txt
